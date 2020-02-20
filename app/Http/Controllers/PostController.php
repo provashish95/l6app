@@ -43,8 +43,9 @@ class PostController extends Controller
      */
     public function store(StoreBlogPost $request)
     {
-        $request->validate();
-        return back()->withInput();
+//        $request->validate();
+        dd($request->all());
+        return back()->with('message','your form will be submitted');
 
     }
 
