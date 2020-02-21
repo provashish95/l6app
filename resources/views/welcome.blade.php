@@ -80,9 +80,22 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    rOY TONMOY
-                </div>
+                @php
+                $num = [1,2,3,4,5,6,7,8,9,10];
+                $count = 0;
+                @endphp
+                @foreach($num as $n)
+{{--                    {{$n}}--}}
+{{--                   @if($loop->iteration % 4 == 0)--}}
+{{--                       <br>--}}
+{{--                       @endif--}}
+                    @if($loop->even)
+                        <span style="color: brown">{{$n}}</span>
+                        @else
+                        <span style="color: blue">{{$n}}</span>
+                        @endif
+                    @endforeach
+                @include('partials.message');
 
                 <div class="links">
                     <a href="{{route('post.index')}}">Docs</a>
